@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes.js';
 import accountRoutes from './routes/accountRoutes.js';
+import financeRoutes from './routes/financeRoutes.js';
 
 // Carrega variáveis de ambiente
 dotenv.config();
@@ -32,6 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 // Rotas
 app.use('/api/auth', authRoutes);
 app.use('/api/accounts', accountRoutes);
+app.use('/api/finance', financeRoutes);
 
 // Rota de health check
 app.get('/api/health', (req, res) => {
